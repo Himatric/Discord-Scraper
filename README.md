@@ -12,11 +12,12 @@ npm i Himatric/Discord-Scraper
 const { Scraper } = require("scraper")
 const scraper = new Scraper({token: "token", channelID: "channel id in guild", guildID: "guild id", outputFile: "path"})
 //output file is not neccesary but it would write all the IDS of the scraped members to the file
-scraper.scrape()
+
 scraper.on("fetched", (members) => {
     // returns map of Member Objects
     console.log(members.size)
 })
+scraper.scrape()
 ```
 
 ## Member Object ##
