@@ -3,7 +3,7 @@
 
 ## Installation ##
 ```bash
-npm i Himatric/MemberScraper
+npm i Himatric/Discord-Scraper
 ```
 
 ## Usage ##
