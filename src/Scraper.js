@@ -54,10 +54,12 @@ class Scraper extends events_1.EventEmitter {
      */
     constructor(config) {
         super();
-        this.output = config.outputFile ? config.outputFile : undefined;
-        this.cid = config.channelID;
-        this.gid = config.guildID;
-        this.token = config.token;
+        if (config) {
+            this.output = (config === null || config === void 0 ? void 0 : config.outputFile) ? config.outputFile : undefined;
+            this.cid = config.channelID;
+            this.gid = config.guildID;
+            this.token = config.token;
+        }
     }
     /**
      * @param {String} id

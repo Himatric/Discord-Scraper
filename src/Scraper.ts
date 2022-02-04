@@ -163,10 +163,12 @@ export class Scraper extends EventEmitter {
      */
     constructor(config: ScraperConfig) {
         super()
-        this.output = config.outputFile ? config.outputFile : undefined;
+        if(config) {
+        this.output = config?.outputFile ? config.outputFile : undefined;
         this.cid = config.channelID;
         this.gid = config.guildID;
         this.token = config.token;
+        }
     }
     /**
      * @param {String} id 
