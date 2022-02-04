@@ -3,13 +3,13 @@
 
 ## Installation ##
 ```bash
-npm i Himatric/Discord-Scraper
+npm i discord-scraper
 ```
 
 ## Usage ##
 
 ```js
-const { Scraper } = require("scraper")
+const { Scraper } = require("discord-scraper")
 const scraper = new Scraper({token: "token", channelID: "channel id in guild", guildID: "guild id", outputFile: "path"})
 //output file is not neccesary but it would write all the IDS of the scraped members to the file
 

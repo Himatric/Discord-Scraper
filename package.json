@@ -16,7 +16,6 @@
   "directories": {
     "example": "examples"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Himatric/Discord-Scraper.git"
