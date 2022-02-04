@@ -1,6 +1,6 @@
 {
   "name": "discord-scraper",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Discord scraper in node.js, works for guild members. Currently making more types.",
   "main": "index.js",
   "typings": "./typings/index.ts",
