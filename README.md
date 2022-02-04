@@ -17,6 +17,11 @@ scraper.on("fetched", (members) => {
     // returns map of Member Objects
     console.log(members.size)
 })
+scraper.on("ready", (event) => {
+    event.users // fetched users
+    event.user // client user
+    event.relationships // client relationships
+})
 scraper.scrape()
 ```
 

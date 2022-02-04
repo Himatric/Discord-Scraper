@@ -222,6 +222,10 @@ class Scraper extends events_1.EventEmitter {
                         yield ws.send(JSON.stringify({ op: 14, d }));
                         i += 300;
                         rbool = false;
+                        break;
+                    case "READY":
+                        this.emit("ready", msg["d"]);
+                        break;
                 }
             });
             ws.onclose = () => {

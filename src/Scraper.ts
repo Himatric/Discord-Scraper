@@ -4,6 +4,45 @@ import WebSocket from "ws";
 import fs from "fs";
 interface Events {
     fetched: [GuildMembers: Map<string, GuildMember>]
+    ready: [ReadyEvent: ReadyEvent]
+}
+interface UserInterface {
+    username:string
+    public_flags:number
+    discriminator:string
+    avatar:string
+    id:string
+}
+interface IClientUser {
+    email:string
+    verified: boolean
+    username: string
+    purchased_flags: number
+    premium: boolean
+    phone: string|null
+    nsfw_allowed: boolean
+    mobile: boolean
+    mfa_enabled: boolean
+    id:string
+    flags:number
+    discriminator:string
+    desktop:boolean
+    bio:string
+    banner_color: string|null
+    banner:string|null
+    avatar:string|null
+    accent_color:string|null
+}
+interface ReadyEvent {
+    users?: UserInterface[]
+    user:IClientUser
+    relationships:Relationship[]
+}
+interface Relationship {
+    user_id: string,
+    type:number
+    nickname:string|null
+    id:string
 }
 interface ScraperConfig {
     outputFile?: string
@@ -290,6 +329,10 @@ export class Scraper extends EventEmitter {
                     await ws.send(JSON.stringify({op: 14, d}));
                     i += 300;
                     rbool = false;
+                    break;
+                case "READY":
+                    this.emit("ready", msg["d"])
+                    break;
             }
         }
         ws.onclose = () => {
